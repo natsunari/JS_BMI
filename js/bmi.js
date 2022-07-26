@@ -35,6 +35,7 @@ function addBodyBMIData(e) {
   const heightData = bodyHeight.value;
   const weightData = bodyWeight.value;
   let bodyState = "";//標註身體BMI狀態
+  let bodyStateColor = "#ffffff";
 
   //BMI運算結果
   const BMIresult = (weightData /(heightData * 0.01 * heightData * 0.01)).toFixed(2); //.toFixed(2) => 僅顯示到小數點後2位
@@ -55,31 +56,37 @@ function addBodyBMIData(e) {
   if (BMIresult >= 40) {
     //重度肥胖
     bodyState = "重度肥胖";
+    bodyStateColor="#FF1200";
     BMIresultBtnChange.classList.add("result-over-l-weight-btn");
     resetBtn.classList.add("over-l-weight-bg");
   } else if (40 > BMIresult && BMIresult >= 35) {
     // 中度肥胖
     bodyState = "中度肥胖";
+    bodyStateColor="#FF6C03";
     BMIresultBtnChange.classList.add("result-over-m-weight-btn");
     resetBtn.classList.add("over-m-weigh-bg");
   } else if (35 > BMIresult && BMIresult >= 30) {
     //輕度肥胖
     bodyState = "輕度肥胖";
+    bodyStateColor="#ffa05d";
     BMIresultBtnChange.classList.add("result-over-s-weight-btn");
     resetBtn.classList.add("over-s-weight-bg");
   } else if (30 > BMIresult && BMIresult >= 25) {
     //過重
     bodyState = "過重";
+    bodyStateColor="#ffca92";
     BMIresultBtnChange.classList.add("result-over-weight-btn");
     resetBtn.classList.add("over-weight-bg");
   } else if (25 > BMIresult && BMIresult >= 18.5) {
     //理想
     bodyState = "理想";
+    bodyStateColor="#31BAF9";
     BMIresultBtnChange.classList.add("result-perfect-body-btn");
     resetBtn.classList.add("perfect-body-bg");
   } else {
     // 過瘦
     bodyState = "過瘦";
+    bodyStateColor="#86D73F";
     BMIresultBtnChange.classList.add("result-over-thin-btn");
     resetBtn.classList.add("over-thin-bg");
   }
@@ -91,6 +98,7 @@ function addBodyBMIData(e) {
     weight: weightData,
     BMI: BMIresult,
     state: bodyState,
+    stateColor:bodyStateColor,
   };
 
   BMIlocalStorageData.push(bmiDetailData);//將對應的bmiDetailData數值push到BMIlocalStorageData內
@@ -108,7 +116,7 @@ function update(){
   for(let i=0; i < BMIlocalStorageData.length ; i++){
     // console.log('update');
     bmiDateRecordList +=`<li class="flex flex-aic bmi-record-card mb-16">
-    <span class="bmi-mark bmi-perfect"></span>
+    <span class="bmi-mark" style="background-color: ${BMIlocalStorageData[i].stateColor};"></span>
     <p class="ptb-20px mr-40px fs-20px">${BMIlocalStorageData[i].state}</p>
     <span class="fs-12px ml-30px mr-8px">BMI</span>
     <p class="fs-20px mr-42px">${BMIlocalStorageData[i].BMI}</p>
