@@ -8,7 +8,6 @@ const resetBtn = document.querySelector(".reset-data");
 
 //文字
 const titleBMI = document.querySelector(".title-BMI");
-// const noData = document.querySelector(".noData");
 
 //結果
 const resultInnerWord = document.querySelector(".result-word");
@@ -23,6 +22,7 @@ let BMIrecordList = document.querySelector(".BMIRecordList");
 //監聽事件
 //開始計算BMI
 BMIresultBtnChange.addEventListener("click", addBodyBMIData, false);
+BMIrecordList.addEventListener("click",deleteOneList,false);
 
 //清除input
 resetBtn.addEventListener("click", resetData, false);
@@ -62,7 +62,7 @@ function addBodyBMIData(e) {
   } else if (40 > BMIresult && BMIresult >= 35) {
     // 中度肥胖
     bodyState = "中度肥胖";
-    bodyStateColor="#FF6C03";
+    bodyStateColor="FF6C03";
     BMIresultBtnChange.classList.add("result-over-m-weight-btn");
     resetBtn.classList.add("over-m-weigh-bg");
   } else if (35 > BMIresult && BMIresult >= 30) {
@@ -80,19 +80,19 @@ function addBodyBMIData(e) {
   } else if (25 > BMIresult && BMIresult >= 18.5) {
     //理想
     bodyState = "理想";
-    bodyStateColor="#31BAF9";
+    bodyStateColor="#86D73F";
     BMIresultBtnChange.classList.add("result-perfect-body-btn");
     resetBtn.classList.add("perfect-body-bg");
   } else {
     // 過瘦
     bodyState = "過瘦";
-    bodyStateColor="#86D73F";
+    bodyStateColor="#31BAF9";
     BMIresultBtnChange.classList.add("result-over-thin-btn");
     resetBtn.classList.add("over-thin-bg");
   }
 
   // 儲存到localStorage
-  //先設計localstorge的資料格式
+  // 先設計localstorge的資料格式
   const bmiDetailData = {
     height: heightData,
     weight: weightData,
@@ -125,7 +125,7 @@ function update(){
     <span class="fs-12px mr-8px">weight</span>
     <p class="fs-20px mr-42px">${BMIlocalStorageData[i].weight+"kg"}</p>
     <span class="fs-12px mr-8px">06-19-2017</span>
-    <a href="#" class="mr-8px p-8px">
+    <a href="#" class="mr-8px p-8px"  data-recodeNum = ${i}>
         <span class="material-symbols-outlined">
             delete
         </span>
@@ -133,6 +133,24 @@ function update(){
 </li>`;
   }
   BMIrecordList.innerHTML = bmiDateRecordList;
+}
+
+
+//刪除單項紀錄
+function deleteOneList(e){
+    let deleteList = e.target.dataset.recodeNum;
+    let nodeName = e.target.nodeName;//被點擊到的元素屬性
+    console.log(nodeName);
+    if (nodeName !== "A"){ //如果被點擊到的元素不是<a>的話就停止function
+        return;
+    }
+    BMIlocalStorageData.splice(deleteList,1);//刪除對象名稱deleteList，往後刪除數量為1
+    
+    //必須重新setItem
+    // localStorage.setItem('bmiItem', BMIlocalStorageDataStr);//localStorage只能儲存字串
+
+    update();
+
 }
 
 

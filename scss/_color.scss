@@ -10,12 +10,13 @@ $light-gray:  rgb(250,250,250);
 $white:#fff;
 
 //判定BMI顏色
+$over-l-weight:#FF1200;
+$over-m-weight:#FF6C03;
+$over-s-weight:#ffa05d;
+$over-weight:#ffca92;
 $perfect-body:#86D73F;
 $over-thin:#31BAF9;
-$over-weight:#ffca92;
-$over-s-weight:#ffa05d;
-$over-m-weight:#FF6C03;
-$over-l-weight:#FF1200;
+
 
 .perfect-body{
     color: $perfect-body;
