@@ -1,0 +1,132 @@
+*{
+    font-family: sans-serif;
+}
+p, span,ul{
+    margin: 0;
+}
+
+input{
+    border: none;
+    appearance:none;
+    -moz-appearance:none;
+}
+
+input:focus{
+ outline:none;
+}
+
+//隱藏輸入框箭頭
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+//li樣式刪除
+ul, ol { list-style: none; }
+li{list-style:none}
+
+//position: relative
+.position-relative{
+    position: relative;
+}
+
+//flex排版
+.flex{
+    display: flex;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.flex-jcc{
+    justify-content: center;
+}
+
+.flex-aic{
+    align-items: center;
+}
+
+//padding+margin
+.container{
+    padding: 8px;
+}
+
+.p-8px{
+    padding: 8px;
+}
+
+.ptb-75px{
+    padding: 75px 0px 75px 0px;
+}
+
+.pb-20px{
+    padding-bottom: 20px;
+}
+
+.pb-8px{
+    padding-bottom: 8px;
+}
+
+.ptb-18px{
+    padding: 18px 0px 18px 0px;
+}
+.ptb-20px{
+    padding: 20px 0px 20px 0px;
+}
+.mr-42px{
+    margin-right: 42px;
+}
+
+.m-r53-l92{
+    margin:0px 53px 0px 92px;
+}
+.ptb-48px{
+    padding: 48px 0px 48px 0px;
+}
+
+.mr-8px{
+    margin-right: 8px;
+}
+
+.mb-16{
+    margin-bottom: 16px;
+}
+
+.ml-30px{
+    margin-left: 30px;
+}
+
+.mr-40px{
+    margin-right: 40px;
+}
+
+//字級
+
+.fs-12px{
+    font-size: 12px;
+}
+
+.fs-18px{
+    font-size: 18px;
+}
+
+.fs-20px{
+    font-size: 20px;
+}
+
+.fs-24px{
+    font-size: 24px;
+}
+
+.fs-32px{
+    font-size: 32px;
+}

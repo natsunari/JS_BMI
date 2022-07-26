@@ -1,0 +1,139 @@
+//元件 看結果按鈕
+.output-result-btn{
+    // position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    border: 6px solid $primary-color;
+    cursor: pointer;
+    &:hover{
+        filter: drop-shadow(0px 0px 5px $primary-color);
+    }
+    &:active{
+        background-color:  #DEA821;
+        border: 6px solid #DEA821;
+    }
+}
+
+//元件 重度肥胖按鈕
+.result-over-l-weight-btn{
+    background-color: $dark-gray;
+    border: 6px solid $over-l-weight;
+    font-size: 32px;
+    color: $over-l-weight;
+}
+
+
+//元件 中度肥胖按鈕
+.result-over-m-weight-btn{
+    background-color: $dark-gray;
+    border: 6px solid $over-m-weight;
+    font-size: 32px;
+    color: $over-m-weight;
+}
+
+
+//元件 輕度肥胖按鈕
+.result-over-s-weight-btn{
+    background-color: $dark-gray;
+    border: 6px solid $over-s-weight;
+    font-size: 32px;
+    color: $over-s-weight;
+}
+
+//元件 過重按鈕
+.result-over-weight-btn{
+    background-color: $dark-gray;
+    border: 6px solid $over-weight;
+    font-size: 32px;
+    color: $over-weight;
+}
+
+//元件 理想按鈕
+.result-perfect-body-btn{
+    background-color: $dark-gray;
+    border: 6px solid $perfect-body;
+    font-size: 32px;
+    color: $perfect-body;
+}
+
+//元件 過輕按鈕
+.result-over-thin-btn{
+    background-color: $dark-gray;
+    border: 6px solid $over-thin;
+    font-size: 32px;
+    color: $over-thin;
+}
+
+
+//元件 輸入框
+.body-data-input{
+    width: 250px;
+    border:2px solid $primary-color;
+    border-radius: 10px;
+    background-color: $light-gray;
+    color: $dark-gray;
+    padding: 8px;
+}
+
+//元件 icon大小
+.bmi-icon-size{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-color: $dark-gray;
+    mask: url(/img/BMICLogo.png) no-repeat;
+    mask-size: 100% 100%;
+}
+
+
+//紀錄列表的樣式
+.bmi-mark{
+    padding: 3.5px;
+    margin-right: 12px;
+    align-self: normal;
+    // background-color: #fff;
+}
+
+
+//card樣式
+.bmi-record-card{
+    background-color:$white ;
+    box-shadow:
+  0px 0px 2.2px rgba(0, 0, 0, 0.02),
+  0px 0px 5.3px rgba(0, 0, 0, 0.028),
+  0px 0px 10px rgba(0, 0, 0, 0.035),
+  0px 0px 17.9px rgba(0, 0, 0, 0.042),
+  0px 0px 33.4px rgba(0, 0, 0, 0.05),
+  0px 0px 80px rgba(0, 0, 0, 0.07)
+;
+}
+
+//清除數值的icon
+.reset-data{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 30px;
+    border-radius: 50%;
+    border: 3px solid $dark-gray;
+    color: $dark-gray;
+    cursor: pointer;
+
+    &:hover{
+        filter: brightness(1.2);
+    }
+    &:active{
+        filter: brightness(1);
+    }
+}
+
+
+//BMI
+.title-BMI{
+    display: none;
+}
+

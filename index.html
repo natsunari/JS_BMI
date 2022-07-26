@@ -1,12 +1,167 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI計算</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/css/BMIstyle.css">
+    <title>你的BMI值計算器</title>
 </head>
+
 <body>
-    
+    <!-- 輸入數值位置 -->
+    <div class="container bg-color">
+        <div class="flex flex-jcc flex-aic ptb-75px">
+            <img src="/img/BMICLogo.png" alt="BMI logo">
+            <div class="m-r53-l92">
+                <div class="pb-20px">
+                    <p class="primary-color pb-8px">身高 cm</p>
+                    <input class="person-height body-data-input" type="number" name="height" placeholder="請輸入身高"
+                        min="0">
+                </div>
+                <div>
+                    <p class="primary-color pb-8px">體重 kg</p>
+                    <input class="person-weight body-data-input" type="number" name="weight" placeholder="請輸入體重"
+                        min="0">
+                </div>
+            </div>
+            <div class="position-relative">
+                <span class="output-result-btn primary-color-bg flex flex-jcc flex-aic flex-col fs-18px">
+                    <span class="result-word">看結果</span>
+                    <p class="title-BMI fs-12px">BMI</p>
+                </span>
+                <span class="material-symbols-outlined reset-data">
+                    autorenew
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- 結果顯示位置 -->
+    <div class="container ptb-48px">
+        <p class="flex flex-jcc flex-aic fs-24px pb-20px">BMI紀錄</p>
+        <div class="noData flex flex-jcc flex-aic ptb-18px">
+            <p>暫無紀錄</p>
+        </div>
+        <ul class="BMIRecordList flex flex-aic flex-col" >
+            <!-- <li class="showRecordList" data-personHeight="0" data-personWeight="0" data-BMI="0">123</li> -->
+            
+        </ul>
+        <!-- <ul class="flex flex-aic flex-col" >
+            <li class="flex flex-aic bmi-record-card mb-16">
+                <span class="bmi-perfect bmi-mark"></span>
+                <p class="ptb-20px mr-40px fs-20px">理想</p>
+                <span class="fs-12px ml-30px mr-8px">BMI</span>
+                <p class="fs-20px mr-42px">20.90</p>
+                <span class="fs-12px mr-8px">height</span>
+                <p class="fs-20px mr-42px">180cm</p>
+                <span class="fs-12px mr-8px">weight</span>
+                <p class="fs-20px mr-42px">70kg</p>
+                <span class="fs-12px mr-8px">06-19-2017</span>
+                <a href="#" class="mr-8px p-8px">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </a>
+            </li>
+            <li class="flex flex-aic bmi-record-card mb-16">
+                <span class="bmi-over-thin bmi-mark"></span>
+                <p class="ptb-20px mr-40px fs-20px">過輕</p>
+                <span class="fs-12px ml-30px mr-8px">BMI</span>
+                <p class="fs-20px mr-42px">20.90</p>
+                <span class="fs-12px mr-8px">height</span>
+                <p class="fs-20px mr-42px">180cm</p>
+                <span class="fs-12px mr-8px">weight</span>
+                <p class="fs-20px mr-42px">70kg</p>
+                <span class="fs-12px mr-8px">06-19-2017</span>
+                <a href="#" class="mr-8px p-8px">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </a>
+            </li>
+            <li class="flex flex-aic bmi-record-card mb-16">
+                <span class="bmi-over-weight bmi-mark"></span>
+                <p class="ptb-20px mr-40px fs-20px">過重</p>
+                <span class="fs-12px ml-30px mr-8px">BMI</span>
+                <p class="fs-20px mr-42px">20.90</p>
+                <span class="fs-12px mr-8px">height</span>
+                <p class="fs-20px mr-42px">180cm</p>
+                <span class="fs-12px mr-8px">weight</span>
+                <p class="fs-20px mr-42px">70kg</p>
+                <span class="fs-12px mr-8px">06-19-2017</span>
+                <a href="#" class="mr-8px p-8px">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </a>
+            </li>
+            <li class="flex flex-aic bmi-record-card mb-16">
+                <span class="bmi-over-s-weight bmi-mark"></span>
+                <p class="ptb-20px mr-40px fs-20px">輕度肥胖</p>
+                <span class="fs-12px ml-30px mr-8px">BMI</span>
+                <p class="fs-20px mr-42px">20.90</p>
+                <span class="fs-12px mr-8px">height</span>
+                <p class="fs-20px mr-42px">180cm</p>
+                <span class="fs-12px mr-8px">weight</span>
+                <p class="fs-20px mr-42px">70kg</p>
+                <span class="fs-12px mr-8px">06-19-2017</span>
+                <a href="#" class="mr-8px p-8px">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </a>
+            </li>
+            
+            <li class="flex flex-aic bmi-record-card mb-16">
+                <span class="bmi-over-m-weight bmi-mark"></span>
+                <p class="ptb-20px mr-40px fs-20px">中度肥胖</p>
+                <span class="fs-12px ml-30px mr-8px">BMI</span>
+                <p class="fs-20px mr-42px">20.90</p>
+                <span class="fs-12px mr-8px">height</span>
+                <p class="fs-20px mr-42px">180cm</p>
+                <span class="fs-12px mr-8px">weight</span>
+                <p class="fs-20px mr-42px">70kg</p>
+                <span class="fs-12px mr-8px">06-19-2017</span>
+                <a href="#" class="mr-8px p-8px">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </a>
+            </li>
+            <li class="flex flex-aic bmi-record-card mb-16">
+                <span class="bmi-over-l-weight bmi-mark"></span>
+                <p class="ptb-20px mr-40px fs-20px">重度肥胖</p>
+                <span class="fs-12px ml-30px mr-8px">BMI</span>
+                <p class="fs-20px mr-42px">20.90</p>
+                <span class="fs-12px mr-8px">height</span>
+                <p class="fs-20px mr-42px">180cm</p>
+                <span class="fs-12px mr-8px">weight</span>
+                <p class="fs-20px mr-42px">70kg</p>
+                <span class="fs-12px mr-8px">06-19-2017</span>
+                <a href="#" class="mr-8px p-8px">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </a>
+            </li>
+            
+        </ul> -->
+    </div>
+    <!-- footer -->
+    <footer class="container flex flex-jcc flex-aic primary-color-bg ptb-18px">
+        <span class="bmi-icon-size"></span>
+    </footer>
+
+    <script src="/js/bmi.js"></script>
 </body>
+
 </html>
