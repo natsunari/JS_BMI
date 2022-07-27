@@ -101,6 +101,14 @@ input:focus {
   outline: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
@@ -144,6 +152,17 @@ li {
           justify-content: center;
 }
 
+.flex-jcsa {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.flex-jcsb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .flex-aic {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -151,7 +170,9 @@ li {
 }
 
 .container {
-  padding: 8px;
+  padding: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .p-8px {
@@ -288,7 +309,7 @@ li {
 }
 
 .body-data-input {
-  width: 250px;
+  width: 350px;
   border: 2px solid #FFD366;
   border-radius: 10px;
   background-color: #fafafa;
@@ -316,6 +337,7 @@ li {
 }
 
 .bmi-record-card {
+  min-width: 700px;
   background-color: #fff;
   -webkit-box-shadow: 0px 0px 2.2px rgba(0, 0, 0, 0.02), 0px 0px 5.3px rgba(0, 0, 0, 0.028), 0px 0px 10px rgba(0, 0, 0, 0.035), 0px 0px 17.9px rgba(0, 0, 0, 0.042), 0px 0px 33.4px rgba(0, 0, 0, 0.05), 0px 0px 80px rgba(0, 0, 0, 0.07);
           box-shadow: 0px 0px 2.2px rgba(0, 0, 0, 0.02), 0px 0px 5.3px rgba(0, 0, 0, 0.028), 0px 0px 10px rgba(0, 0, 0, 0.035), 0px 0px 17.9px rgba(0, 0, 0, 0.042), 0px 0px 33.4px rgba(0, 0, 0, 0.05), 0px 0px 80px rgba(0, 0, 0, 0.07);

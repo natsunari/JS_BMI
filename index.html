@@ -18,47 +18,51 @@
 </head>
 
 <body>
-    <!-- 輸入數值位置 -->
-    <div class="container bg-color">
-        <div class="flex flex-jcc flex-aic ptb-75px">
-            <img src="img/BMICLogo.png" alt="BMI logo">
-            <div class="m-r53-l92">
-                <div class="pb-20px">
-                    <p class="primary-color pb-8px">身高 cm</p>
-                    <input class="person-height body-data-input" type="number" name="height" placeholder="請輸入身高"
+    <div class=" bg-color">
+        <div class="container">
+            <div class="flex flex-aic ptb-75px flex-jcsa">
+                <img src="img/BMICLogo.png" alt="BMI logo">
+                <div class="flex flex-col">
+                    <label class="primary-color pb-8px">身高 cm</label>
+                    <input class="person-height body-data-input mb-16" type="number" name="height" placeholder="請輸入身高"
                         min="0">
-                </div>
-                <div>
-                    <p class="primary-color pb-8px">體重 kg</p>
+
+                    <label class="primary-color pb-8px">體重 kg</label>
                     <input class="person-weight body-data-input" type="number" name="weight" placeholder="請輸入體重"
                         min="0">
                 </div>
-            </div>
-            <div class="position-relative">
-                <span class="output-result-btn primary-color-bg flex flex-jcc flex-aic flex-col fs-18px">
-                    <span class="result-word">看結果</span>
-                    <p class="title-BMI fs-12px">BMI</p>
-                </span>
-                <span class="material-symbols-outlined reset-data">
-                    autorenew
-                </span>
-            </div>
-        </div>
-    </div>
-    <!-- 結果顯示位置 -->
-    <div class="container ptb-48px">
-        <p class="flex flex-jcc flex-aic fs-24px pb-20px">BMI紀錄</p>
-        <div class="noData flex flex-jcc flex-aic ptb-18px">
-            <p>暫無紀錄</p>
-        </div>
-        <ul class="BMIRecordList flex flex-aic flex-col" >
-        </ul>
-    </div>
-    <!-- footer -->
-    <footer class="container flex flex-jcc flex-aic primary-color-bg ptb-18px">
-        <span class="bmi-icon-size"></span>
-    </footer>
 
+                <div class="position-relative">
+                    <span class="output-result-btn primary-color-bg flex flex-jcc flex-aic flex-col fs-18px">
+                        <span class="result-word">看結果</span>
+                        <p class="title-BMI fs-12px">BMI</p>
+                    </span>
+                    <a href="#" class="material-symbols-outlined reset-data">autorenew</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- 結果顯示位置 -->
+    <div class="container">
+        <div class="ptb-48px">
+            <p class="flex flex-jcc flex-aic fs-24px pb-20px">BMI紀錄</p>
+            <ul class="noData flex flex-jcc flex-aic ptb-18px">
+                <li>暫無紀錄</li>
+            </ul>
+            <ul class="BMIRecordList flex flex-aic flex-col">
+            </ul>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="primary-color-bg">
+        <div class="container flex flex-jcc flex-aic ptb-18px">
+            <span class="bmi-icon-size"></span>
+        </div>
+    </footer>
     <script src="js/bmi.js"></script>
 </body>
 

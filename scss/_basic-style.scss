@@ -15,6 +15,9 @@ input:focus{
  outline:none;
 }
 
+a { text-decoration: none; }
+a:hover { text-decoration: none; }
+
 //隱藏輸入框箭頭
 /* Chrome, Safari, Edge, Opera */
 input[type=number]::-webkit-outer-spin-button,
@@ -51,13 +54,23 @@ li{list-style:none}
     justify-content: center;
 }
 
+.flex-jcsa{
+    justify-content: space-around;
+}
+
+.flex-jcsb{
+    justify-content: space-between;
+}
+
 .flex-aic{
     align-items: center;
 }
 
 //padding+margin
 .container{
-    padding: 8px;
+    padding: 16px;
+    max-width: 1000px;
+  margin: 0 auto;
 }
 
 .p-8px{
