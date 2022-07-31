@@ -1,7 +1,8 @@
 //設定dom
 let bodyHeight = document.querySelector(".person-height");
 let bodyWeight = document.querySelector(".person-weight");
-let BMIresultBtnChange = document.querySelector(".output-result-btn");
+
+let BMIresultBtnChange = document.querySelector(".count-btn");
 
 //按鈕：清除數值按鈕
 let resetBtn = document.querySelector(".reset-data");
@@ -28,19 +29,6 @@ BMIrecordList.addEventListener("click",deleteOneList,false);
 resetBtn.addEventListener("click", resetData, false);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 //function：計算BMI+儲存localStorage
 function addBodyBMIData(e) {
   e.preventDefault(); //瀏覽預設行為做清除
@@ -65,6 +53,8 @@ function addBodyBMIData(e) {
   titleBMI.style.display = "block"; //讓BMI小字出現(預設none)
   resetBtn.style.display = "block"; //讓重製按鈕出現(預設none)
   resultInnerWord.innerHTML = BMIresult;
+  BMIresultBtnChange.classList.remove(".count-btn");
+
 
   if (BMIresult >= 40) {
     //重度肥胖
@@ -72,6 +62,7 @@ function addBodyBMIData(e) {
     bodyStateColor="#FF1200";
     BMIresultBtnChange.classList.add("result-over-l-weight-btn");
     resetBtn.classList.add("over-l-weight-bg");
+
   } else if (40 > BMIresult && BMIresult >= 35) {
     // 中度肥胖
     bodyState = "中度肥胖";
@@ -94,7 +85,7 @@ function addBodyBMIData(e) {
     //理想
     bodyState = "理想";
     bodyStateColor="#86D73F";
-    BMIresultBtnChange.classList.add("result-perfect-body-btn");
+    BMIresultBtnChange.classList.add("result-btn");
     resetBtn.classList.add("perfect-body-bg");
   } else {
     // 過瘦
@@ -119,7 +110,8 @@ function addBodyBMIData(e) {
   localStorage.setItem('bmiItem', BMIlocalStorageDataStr);//localStorage只能儲存字串
 
   update();
-  return false;
+
+  BMIresultBtnChange.removeEventListener("click",addBodyBMIData, false);//移除click效果
 
 }
 
@@ -160,6 +152,10 @@ function deleteOneList(e){
     
     update();//更新下方紀錄
 
+    //重新setItem到localstorage內
+    let BMIlocalStorageDataStr = JSON.stringify(BMIlocalStorageData);//getItem轉換型別為字串
+    localStorage.setItem('bmiItem', BMIlocalStorageDataStr);//localStorage只能儲存字串
+
 }
 
 
@@ -168,16 +164,18 @@ function deleteOneList(e){
 function resetData(e) {
   bodyHeight.value = "";
   bodyWeight.value = "";
-  resetBtn.style.display = "none";
-  resetBtn.setAttribute("class", "material-symbols-outlined reset-data");
-  noData.style.display="block";
-  BMIresultBtnChange.setAttribute(
-    "class",
-    "output-result-btn primary-color-bg flex flex-jcc flex-aic flex-col fs-18px"
-  );
-  resultInnerWord.innerHTML = "看結果";
+  // resetBtn.style.display = "none";
+  // resetBtn.setAttribute("class", "material-symbols-outlined reset-data");
+  // noData.style.display="block";
+  // resultInnerWord.innerHTML = "看結果";
+  BMIresultBtnChange.classList.add(".count-btn");
+  BMIresultBtnChange.classList.remove("result-btn");
+  BMIresultBtnChange.addEventListener("click", addBodyBMIData, false);
 }
 
 // 參考
 // https://github.com/s9220140/BMI---homework/blob/main/js/all.js
 
+// 1-修正刪除項目不對(刪除1會刪除到2)
+// 2-修正按鈕效果:看結果和狀態可以重疊，現在是改樣式。
+// 如果本身就是兩個不同的元件，就不會有第二次click的狀況？

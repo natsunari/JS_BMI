@@ -1,5 +1,5 @@
 //元件 看結果按鈕
-.output-result-btn{
+.count-btn{
     // position: relative;
     width: 120px;
     height: 120px;
@@ -10,11 +10,30 @@
     &:hover{
         filter: drop-shadow(0px 0px 5px $primary-color);
     }
-    &:active{
-        background-color:  #DEA821;
-        border: 6px solid #DEA821;
-    }
+    // &:active{
+    //     background-color:  #DEA821;
+    //     border: 6px solid #DEA821;
+    // }
 }
+// 元件 理想按鈕當範本
+.result-btn{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    background-color: $dark-gray;
+    border: 6px solid $perfect-body;
+    font-size: 32px;
+    color: $perfect-body;
+}
+
+//元件 理想按鈕
+// .result-perfect-body-btn{
+//     background-color: $dark-gray;
+//     border: 6px solid $perfect-body;
+//     font-size: 32px;
+//     color: $perfect-body;
+// }
 
 //元件 重度肥胖按鈕
 .result-over-l-weight-btn{
@@ -50,13 +69,7 @@
     color: $over-weight;
 }
 
-//元件 理想按鈕
-.result-perfect-body-btn{
-    background-color: $dark-gray;
-    border: 6px solid $perfect-body;
-    font-size: 32px;
-    color: $perfect-body;
-}
+
 
 //元件 過輕按鈕
 .result-over-thin-btn{
