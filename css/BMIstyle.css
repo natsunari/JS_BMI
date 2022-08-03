@@ -1,8 +1,8 @@
-.perfect-body {
+.normal-body {
   color: #86D73F;
 }
 
-.perfect-body-bg {
+.normal-body-bg {
   background-color: #86D73F;
 }
 
@@ -58,30 +58,6 @@
   background-color: #FFD366;
 }
 
-.bmi-perfect {
-  background-color: #86D73F;
-}
-
-.bmi-over-thin {
-  background-color: #31BAF9;
-}
-
-.bmi-over-weight {
-  background-color: #ffca92;
-}
-
-.bmi-over-s-weight {
-  background-color: #ffa05d;
-}
-
-.bmi-over-m-weight {
-  background-color: #FF6C03;
-}
-
-.bmi-over-l-weight {
-  background-color: #FF1200;
-}
-
 * {
   font-family: sans-serif;
 }
@@ -135,6 +111,10 @@ li {
 
 .position-absolute {
   position: absolute;
+}
+
+.display-none {
+  display: none;
 }
 
 .flex {
@@ -265,14 +245,13 @@ li {
           filter: drop-shadow(0px 0px 5px #FFD366);
 }
 
-.result-btn {
+.original-btn {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background-color: #424242;
-  border: 6px solid #86D73F;
   font-size: 32px;
-  color: #86D73F;
+  background-color: white;
+  display: none;
 }
 
 .result-over-l-weight-btn {
@@ -301,6 +280,12 @@ li {
   border: 6px solid #ffca92;
   font-size: 32px;
   color: #ffca92;
+}
+
+.result-normal-btn {
+  background-color: #424242;
+  border: 6px solid #86D73F;
+  color: #86D73F;
 }
 
 .result-over-thin-btn {
@@ -366,9 +351,5 @@ li {
 .reset-data:active {
   -webkit-filter: brightness(1);
           filter: brightness(1);
-}
-
-.title-BMI {
-  display: none;
 }
 /*# sourceMappingURL=BMIstyle.css.map */
